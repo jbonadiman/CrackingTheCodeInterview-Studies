@@ -16,10 +16,15 @@ namespace CrackingTheCodeInterview
                 40
             };
 
-            int[] array = new int[linkedList.Count];
-            linkedList.CopyTo(array, 3);
+            Console.WriteLine(linkedList);
+            List
+            linkedList.Insert(0, 50);
+            Console.WriteLine(linkedList);
+            linkedList.Insert(linkedList.Count, 400);
+            Console.WriteLine(linkedList);
 
-            Console.WriteLine(string.Join(" <> ", array));
+            linkedList.Insert(2, 100);
+            Console.WriteLine(linkedList);
 
         }
     }
