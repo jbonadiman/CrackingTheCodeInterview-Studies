@@ -27,8 +27,8 @@ public class ArrayList<T> : ICollection<T>, IEnumerable<T>, IList<T>, IReadOnlyC
         throw new IndexOutOfRangeException();
       }
 
-      return this.internalArray[index]
-        }
+      return this.internalArray[index];
+    }
     set
     {
       if (index < 0 || index > this.Count)
@@ -117,17 +117,29 @@ public class ArrayList<T> : ICollection<T>, IEnumerable<T>, IList<T>, IReadOnlyC
       if (write) this.internalArray[i] = this.internalArray[i + 1];
     }
 
-    if (!write && item.Equals(this.internalArray[this.Count - 1])) this.internalArray[this.Count - 1] = null;
+    if (!write && item.Equals(this.internalArray[this.Count - 1])) this.internalArray[this.Count - 1] = default;
     return false;
   }
   public IEnumerator<T> GetEnumerator() => new Enumerator<T>(this);
-  public int IndexOf(T item);
-  public void Insert(int index, T item);
-  public void RemoveAt(int index);
+  public int IndexOf(T item)
+  {
+    throw new NotImplementedException();
+  }
+
+  public void Insert(int index, T item)
+  {
+    throw new NotImplementedException();
+  }
+
+  public void RemoveAt(int index)
+  {
+    throw new NotImplementedException();
+  }
+
   IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
   public struct Enumerator<U> : IEnumerator<T>, IDisposable
   {
-    private SimpleLinkedList<T> internalList;
+    private ArrayList<T> internalList;
     private int index;
 
     public T Current
@@ -144,7 +156,7 @@ public class ArrayList<T> : ICollection<T>, IEnumerable<T>, IList<T>, IReadOnlyC
 
     object IEnumerator.Current => throw new NotImplementedException();
 
-    public Enumerator(SimpleLinkedList<T> list)
+    public Enumerator(ArrayList<T> list)
     {
       this.index = -1;
       this.internalList = list;

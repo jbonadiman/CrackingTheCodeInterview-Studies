@@ -251,7 +251,10 @@ namespace Structures
         //   T:System.ArgumentException:
         //     The implementation of comparison caused an error during the sort. For example,
         //     comparison might not return 0 when comparing an item with itself.
-        public static SimpleLinkedList<T> Sort(Comparison<T> comparison);
+        public static SimpleLinkedList<T> Sort(Comparison<T> comparison)
+        {
+            throw new NotImplementedException();
+        }
         //
         // Summary:
         //     Sorts the elements in the entire System.Collections.Generic.List`1 using the
@@ -285,7 +288,10 @@ namespace Structures
         //   T:System.ArgumentException:
         //     The implementation of comparer caused an error during the sort. For example,
         //     comparer might not return 0 when comparing an item with itself.
-        public void Sort(IComparer<T>? comparer);
+        public void Sort(IComparer<T>? comparer)
+        {
+            throw new NotImplementedException();
+        }
 
 
         public struct Enumerator<U> : IEnumerator<T>, IDisposable

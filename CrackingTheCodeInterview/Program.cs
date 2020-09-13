@@ -17,7 +17,6 @@ namespace CrackingTheCodeInterview
             };
 
             Console.WriteLine(linkedList);
-            List
             linkedList.Insert(0, 50);
             Console.WriteLine(linkedList);
             linkedList.Insert(linkedList.Count, 400);
